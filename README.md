@@ -27,9 +27,11 @@ A custom logger for Unity with custom categories and logs only available on Edit
 </p>
 
 ## 🖥️ How It Works
-There's a Console class, which basically serves as a wrapper of Unity's Debug class for logs. Each log type (info, warning, error) has it's own custom color and you can decide to define a category for each one (which will appear in bold in front). This lets you define custom categories on the fly, with no need to maintain any Enums or Scriptable Objects. The best approach for me, would be to have a static class with all your custom category const strings.
+There's a Console class, which basically serves as a wrapper of Unity's Debug class for logs. Each log type (info, warning, error) has it's own custom color and you can decide to define a category for each one (which will appear in bold in front). 
 
-Example Usage:
+This lets you define custom categories on the fly, with no need to maintain any Enums or Scriptable Objects. The best approach for me, would be to have a static class with all your custom category const strings.
+
+### Example Usage:
 ```csharp
 private void Awake()
 {
@@ -52,7 +54,13 @@ private void Awake()
     Console.LogException("Analytics", new NullReferenceException());
 }
 ```
-Output:
+### Output:
+<p align="center">
+  <img src="https://github.com/JoanStinson/UnityLoggerExtended/blob/main/output.PNG">
+</p>
+
+### Faster Category Searcher
+
 
 ## 🖥️ How To Disable Logs on Release Builds
 To disable Unity Logs on Release Builds and have them be available only on the Editor and Development Builds, you can do it this way:
