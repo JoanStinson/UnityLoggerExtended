@@ -26,7 +26,35 @@ A custom logger for Unity with custom categories and logs only available on Edit
   <img src="https://github.com/JoanStinson/UnityLoggerExtended/blob/main/preview.PNG">
 </p>
 
-## 🖥️ How To Disable Unity Logs on Release Builds
+## 🖥️ How It Works
+There's a Console class, which basically serves as a wrapper of Unity's Debug class for logs. Each log type (info, warning, error) has it's own custom color and you can decide to define a category for each one (which will appear in bold in front). This lets you define custom categories on the fly, with no need to maintain any Enums or Scriptable Objects. The best approach for me, would be to have a static class with all your custom category const strings.
+
+Example Usage:
+```csharp
+private void Awake()
+{
+    Console.Log("Hello World!");
+    Console.LogFormat("Hell{0} W{1}rld!", 0, 0);
+    Console.Log("UI", "Hello World!");
+    Console.LogFormat("UI", "Hell{0} W{1}rld!", 0, 0);
+
+    Console.LogWarning("Hello World!");
+    Console.LogWarningFormat("Hell{0} W{1}rld!", 0, 0);
+    Console.LogWarning("Audio", "Hello World!");
+    Console.LogWarningFormat("Audio", "Hell{0} W{1}rld!", 0, 0);
+
+    Console.LogError("Hello World!");
+    Console.LogErrorFormat("Hell{0} W{1}rld!", 0, 0);
+    Console.LogError("Physics", "Hello World!");
+    Console.LogErrorFormat("Physics", "Hell{0} W{1}rld!", 0, 0);
+
+    Console.LogException(new NullReferenceException());
+    Console.LogException("Analytics", new NullReferenceException());
+}
+```
+Output:
+
+## 🖥️ How To Disable Logs on Release Builds
 To disable Unity Logs on Release Builds and have them be available only on the Editor and Development Builds, you can do it this way:
 ```csharp
     private void Awake()
@@ -51,7 +79,7 @@ public static class Console
 ```
 Like this, none of your log calls will be executed without having to remove any code! I know, super useful right?
 
-You can alternatively, undefine de DEBUG symbol manually, by doing so:
+Alternatively, you can undefine the DEBUG symbol manually, by doing so:
 ```csharp
 #undef DEBUG
 ```
