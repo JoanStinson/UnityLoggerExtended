@@ -22,6 +22,10 @@ A custom logger for Unity with custom categories and logs only available on Edit
   </a>
 </p>
 
+<p align="center">
+  <img src="https://github.com/JoanStinson/UnityLoggerExtended/blob/main/preview.PNG">
+</p>
+
 ## 🖥️ How To Disable Unity Logs on Release Builds
 To disable Unity Logs on Release Builds and have them be available only on the Editor and Development Builds, you can do it this way:
 ```csharp
