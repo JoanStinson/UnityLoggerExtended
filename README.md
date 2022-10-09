@@ -34,7 +34,6 @@ To disable Unity Logs on Release Builds and have them be available only on the E
 #endif
     }
 ```
-
 By using Unity Logger Extended, this is automatically achieved via the Conditional Attributes located on top of each method:
 ```csharp
 public static class Console
@@ -46,5 +45,9 @@ public static class Console
     }
 }
 ```
-
 Like this, none of your log calls will be executed without having to remove any code! I know, super useful right?
+
+You can alternatively, undefine de DEBUG symbol manually, by doing so:
+```csharp
+#undef DEBUG
+```
