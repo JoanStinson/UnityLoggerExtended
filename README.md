@@ -27,7 +27,9 @@ A custom logger for Unity with custom categories and logs only available on Edit
 </p>
 
 ## 🖥️ How It Works
-There's a Console class, which basically serves as a wrapper of Unity's Debug class for logs. Each log type (info, warning, error) has it's own custom color and you can decide to define a category for each one (which will appear in bold in front). 
+For starters, import the package located in the [Releases](https://github.com/JoanStinson/UnityLoggerExtended/releases) section into your project.
+
+Now then, there's a Console class, which basically serves as a wrapper of Unity's Debug class for logs. Each log type (info, warning, error) has it's own custom color and you can decide to define a category for each one (which will appear in bold in front). 
 
 Furthermore, this system lets you define custom categories on the fly, with no need to maintain any Enums or Scriptable Objects. Just pass in the category before the log message and whoala!
 
